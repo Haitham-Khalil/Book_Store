@@ -6,4 +6,5 @@ db.sqlite3
 .env
 .idea/
 .vscode/
-/migrations/
+book_outlet/migrations/
+
