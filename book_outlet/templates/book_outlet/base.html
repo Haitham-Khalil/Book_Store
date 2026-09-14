@@ -1,12 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'book_outlet/css/styles.css' %}">
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <header class="site-header">
+        <h1><a href="/">Book Outlet</a></h1>
+    </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
 </html>

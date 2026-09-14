@@ -5,14 +5,16 @@
 {% endblock %}
 
 {% block content %}
-  <ul>
+  <ul class="book-list">
     {% for book in books %}
       <li>
-        <a href="{{ book.get_absolute_url }}">Book: {{ book.title }}</a> (Rating: {{ book.rating }}) 
+        <a href="{{ book.get_absolute_url }}">Book: {{ book.title }}</a> (Rating: {{ book.rating }})
+        {% if book.is_bestselling %}<span class="badge">Bestseller</span>{% endif %}
       </li>
     {% endfor %}
   </ul>
-  <hr>
-  <p>Total number of books: {{ total_number_of_books }}</p>
-  <p>Average rating: {{ average_rating.rating__avg }}</p>
+  <div class="stats">
+    <p>Total number of books: {{ total_number_of_books }}</p>
+    <p>Average rating: {{ average_rating.rating__avg }}</p>
+  </div>
 {% endblock %}

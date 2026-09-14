@@ -1,0 +1,60 @@
+/* App-level static file for the book_outlet app (found via app's static/ dir) */
+
+.book-list {
+    list-style: none;
+}
+
+.book-list li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-list a {
+    color: #2c3e50;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.book-list a:hover {
+    color: #3498db;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #f39c12;
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.stats {
+    margin-top: 1.5rem;
+    background-color: #eaf2f8;
+    border-left: 4px solid #3498db;
+    padding: 0.75rem 1rem;
+}
+
+.book-detail {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1.5rem;
+}
+
+.book-detail h1 {
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+}
+
+.book-detail h2 {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
