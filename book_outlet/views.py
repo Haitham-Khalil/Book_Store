@@ -1,3 +1,4 @@
+from django.db.models.aggregates import Avg
 from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 from .models import Book
@@ -6,8 +7,19 @@ from .models import Book
 
 
 def index(request):
-    books = Book.objects.all()
-    return render(request, "book_outlet/index.html", {"books": books})
+    books = Book.objects.all().order_by("-rating")
+    num_books = books.count()
+    avg_rating = books.aggregate(Avg("rating"))
+
+    return render(
+        request,
+        "book_outlet/index.html",
+        {
+            "books": books,
+            "total_number_of_books": num_books,
+            "average_rating": avg_rating
+        }
+    )
 
 
 def book_detail(request, slug):
@@ -15,7 +27,7 @@ def book_detail(request, slug):
     #     book = Book.objects.get(id=id)
     # except:
     #     raise Http404()
-    book=get_object_or_404(Book, slug=slug)
+    book = get_object_or_404(Book, slug=slug)
 
     return render(
         request,
